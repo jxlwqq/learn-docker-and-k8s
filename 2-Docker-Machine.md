@@ -30,11 +30,9 @@ docker-machine start demo
 
 #### 云端使用
 
-[第三方云服务商驱动列表](https://github.com/docker/docker.github.io/blob/master/machine/AVAILABLE_DRIVER_PLUGINS.md)
+这里以[阿里云ECS驱动](https://github.com/AliyunContainerService/docker-machine-driver-aliyunecs)为例。更多云服务商，请参考[第三方云服务商驱动列表](https://github.com/docker/docker.github.io/blob/master/machine/AVAILABLE_DRIVER_PLUGINS.md)。
 
-这里以[阿里云ECS驱动](https://github.com/AliyunContainerService/docker-machine-driver-aliyunecs)为例。
-
-执行一下命令，安装本地驱动：
+首先，执行一下命令，安装本地驱动：
 
 ```bash
 # 获取二进制文件
@@ -45,6 +43,7 @@ tar zxvf docker-machine-driver-aliyunecs_darwin-amd64.tgz
 cp ./bin/docker-machine-driver-aliyunecs.darwin-amd64 /usr/local/bin/docker-machine-driver-aliyunecs
 ```
 
+然后，新建 Machine：
 
 ```bash
 docker-machine create -d aliyunecs \
@@ -56,13 +55,13 @@ docker-machine create -d aliyunecs \
                       machine-aliyunecs-demo
 ```
 
- * `--aliyunecs-io-optimized`  实例的I/O 优化类型，有效值可以是`none`（默认）或`optimized`；
- * `--aliyunecs-instance-type` 实例的类型，默认值为`ecs.n4.small`，实际值请在阿里云控制台查询；
- * `--aliyunecs-access-key-id` 实例的 key-id，实际值请在控制台`产品与服务`中选择`访问控制`新建用户获取；
+ * `--aliyunecs-io-optimized`      实例的I/O 优化类型，有效值可以是`none`（默认）或`optimized`；
+ * `--aliyunecs-instance-type`     实例的类型，默认值为`ecs.n4.small`，实际值请在阿里云控制台查询；
+ * `--aliyunecs-access-key-id`     实例的 key-id，实际值请在控制台`产品与服务`中选择`访问控制`新建用户获取；
  * `--aliyunecs-access-key-secret` 实例的 key-secret，实际值请在控制台`产品与服务`中选择`访问控制`新建用户获取；
- * `--aliyunecs-region` 实例的地域（新建实例时选择的地域），默认值为 `cn-hangzhou`，其他值还有 `cn-shanghai`、`cn-beijing` 等，实际值请在阿里云控制台查询，[阿里云地域（Region）列表](https://help.aliyun.com/document_detail/40654.html)
+ * `--aliyunecs-region`            实例的地域（新建实例时选择的地域），默认值为 `cn-hangzhou`，实际值请在阿里云控制台查询，并依据[阿里云地域（Region）列表](https://help.aliyun.com/document_detail/40654.html)转换。
  
- <img src="./images/aliyunecs-instance.png" alt="阿里云ECS实例" width="500">
+ <img src="./images/aliyunecs-instance.png" alt="阿里云ECS实例">
  
  上图为阿里云控制台示例，参数值请自行登录阿里云控制台获取。
 
