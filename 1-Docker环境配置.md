@@ -8,11 +8,15 @@ Docker 是一个开放源代码软件项目，让应用程序布署在软件货�
 
 安装完成后，可至 [Docker Hub](https://hub.docker.com) 免费注册一个 Docker 账号。Docker Hub 是 Docker 官方维护的公共仓库，包括了 180 多万个可用镜像。大部分需求都可以通过在 Docker Hub 中直接下载镜像来实现。
 
+![关于 Docker Desktop](images/docker.png)
+
 #### 安装 Kitematic
 
 Kitematic 是一个 Docker GUI 工具，它可以在 Mac 上更快速、更简单的运行 Docker。Kitematic 于 2015 年被 Docker 收购。
 
 文件链接：[点击下载](https://download.docker.com/kitematic/Kitematic-Mac.zip)。
+
+![Kitematic 界面](./images/kitematic.png)
 
 ## macOS 安装虚拟机
 
@@ -24,11 +28,15 @@ VirtualBox 是针对基于 x86 的系统的强大的跨平台虚拟化软件。�
 
 当前版本为 `5.2.22`，最新版本可至 [官网下载](https://www.virtualbox.org)。
 
+![VirtualBox 界面](./images/virtualbox.png)
+
 #### 安装 Vagrant
 
 Vagrant 是一款用于构建及配置虚拟开发环境的软件，基于 Ruby, 主要以命令行的方式运行。 主要使用 Oracle 的开源 VirtualBox 虚拟化系统，与 Chef，Salt，Puppet 等环境配置管理软件搭配使用，可以实行快速虚拟开发环境的构建。
 
-文件链接：[点击下载](https://releases.hashicorp.com/vagrant/2.2.2/vagrant_2.2.2_x86_64.dmg)，当前版本为 `2.2.2`，最新版本可至 [官网下载](https://www.vagrantup.com/)。
+文件链接：[点击下载](https://releases.hashicorp.com/vagrant/2.2.2/vagrant_2.2.2_x86_64.dmg)。
+
+当前版本为 `2.2.2`，最新版本可至 [官网下载](https://www.vagrantup.com/)。
 
 安装完成后，以安装 CentOS 7 为例，执行以下命令：
 
@@ -47,6 +55,8 @@ vagrant up
 vagrant status
 # 删除虚拟机
 vagrant destroy
+# 登录虚拟机
+vagrant ssh
 ```
 
 其他 vagrant 命令详见 [官方文档](https://www.vagrantup.com/docs/index.html)。
@@ -98,5 +108,5 @@ sudo docker run hello-world
 
 安装详情可参考官方文档：[Get Docker CE for CentOS](https://docs.docker.com/install/linux/docker-ce/centos/#install-using-the-repository)。
 
-上述命令也可写入 Vagrantfile 文件中，然后执行 `vagrant up`，即可在完成新建虚拟机后，自动执行并构建 Docker 环境。详见[示例文件第 66 行至 72 行](./Vagrantfile)。
+上述命令也可写入 Vagrantfile 文件中，然后执行 `vagrant up`，即可在完成新建虚拟机后，自动执行并构建 Docker 环境。详见 [示例文件第 66 行至 72 行](./Vagrantfile)。
 
