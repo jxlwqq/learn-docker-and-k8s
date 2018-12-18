@@ -24,7 +24,9 @@ docker-machine ls
 docker-machine ssh demo
 ```
 ```bash
+# 停止
 docker-machine stop demo
+# 启动
 docker-machine start demo
 ```
 
@@ -64,4 +66,12 @@ docker-machine create -d aliyunecs \
  <img src="./images/aliyunecs-instance.png" alt="阿里云ECS实例">
  
  上图为阿里云控制台示例，参数值请自行登录阿里云控制台获取。
-
+ 
+最后，连接 Server 环境：
+ 
+ ```bash
+ docker-machine env machine-aliyunecs-demo
+ ```
+ ```bash
+ eval $(docker-machine env machine-aliyunecs-demo)
+ ```
