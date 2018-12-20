@@ -92,6 +92,13 @@ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/dock
 sudo yum install docker-ce
 ```
 
+#### 添加用户到组
+
+将登录用户 vagrant 加入到 docker 组中，这样执行 docker 相关命令就不用再用 sudo。
+```bash
+sudo gpasswd -a vagrant docker
+```
+
 #### 启动 Docker
 
 ```bash
@@ -101,7 +108,7 @@ sudo systemctl start docker
 #### 检查 Docker 环境是否正常工作
 
 ```bash
-sudo docker run hello-world
+docker run hello-world
 ```
 
 如果返回信息里出现 `Hello from Docker!`，则表明 Docker 环境安装成功。
@@ -109,4 +116,6 @@ sudo docker run hello-world
 安装详情可参考官方文档：[Get Docker CE for CentOS](https://docs.docker.com/install/linux/docker-ce/centos/#install-using-the-repository)。
 
 上述命令也可写入 Vagrantfile 文件中，然后执行 `vagrant up`，即可在完成新建虚拟机后，自动执行并构建 Docker 环境。详见 [示例文件第 66 行至 72 行](./Vagrantfile)。
+
+至此，我们的环境已经搭建完毕，除了使用 Vagrant 管理虚拟机，我们还可以使用 Docker for Mac 自带的 docker-machine 来创建 Docker 应用环境。
 
