@@ -7,10 +7,10 @@ Docker Machine 是 Docker 官方提供的一个工具，它可以帮助我们在
 #### 本地使用
 
 ```bash
-docker-machine create demo
+docker-machine create machine-local-demo
 ```
 
-上述命令会从 Github 仓库 [boot2docker](https://github.com/boot2docker/boot2docker) 下载 boot2docker ISO 文件，进而创建一个装有 Docker 环境的虚拟机。创建完成后，VirtualBox 界面左侧列表会显示出一个名为`demo`的虚拟机，如下图所示。
+上述命令会从 Github 仓库 [boot2docker](https://github.com/boot2docker/boot2docker) 下载 boot2docker（一款运行 Docker 最小的内核） ISO 文件，进而创建一个装有 Docker 环境的虚拟机。创建完成后，VirtualBox 界面左侧列表会显示出一个名为`demo`的虚拟机，如下图所示。
 
 <img src="./images/docker-machine-create-demo.png" alt="新建虚拟机" width="500">
 
@@ -21,13 +21,16 @@ docker-machine ls
 
 ```bash
 # 登录虚拟机
-docker-machine ssh demo
+docker-machine ssh machine-local-demo
 ```
+
 ```bash
 # 停止
-docker-machine stop demo
+docker-machine stop machine-local-demo
 # 启动
-docker-machine start demo
+docker-machine start machine-local-demo
+# 删除
+docker-machine rm machine-local-demo
 ```
 
 #### 云端使用
