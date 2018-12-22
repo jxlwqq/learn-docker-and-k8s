@@ -67,3 +67,30 @@ IMAGE               CREATED             CREATED BY                              
 ```bash
 docker image rm -f hello-docker
 ```
+
+#### 发布镜像
+
+方法一：
+
+不推荐，镜像构建过程不透明，无法确认安全性。
+```bash
+docker login # Docker Hub 账号密码
+docker push jxlwqq/hello-docker
+```
+方法二：
+
+与其分享 Docker image，不如分享构建 image 的 Dockerfile。
+将 Dockerfile 发布到 GitHub 仓库上，然后关联 GitHub 账号，选择对应的仓库，Docker Hub 将会自动克隆并构建。
+
+https://cloud.docker.com/repository/create
+
+<img src="./images/create-repository.png" width="500">
+
+#### 搭建私有仓库
+
+
+
+
+
+
+
