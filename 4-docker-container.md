@@ -92,3 +92,34 @@ RUN yum install -y vim
 ```bash
 docker build -t jxlwqq/centos-with-vim .
 ```
+#### docker run -d
+```
+docker container run -d 
+```
+#### docker exec
+```
+docker exec -it CONTAINER /bin/bash
+```
+
+#### docker stop
+```
+docker stop
+docker start
+```
+
+#### docker inspect
+```bash
+docker inspect # JSON 格式的详细信息
+```
+
+#### docker logs
+```bash
+docker logs
+```
+
+#### 限定配置
+memory 内存
+cpu-shares CPU 权重
+```bash
+docker run --memory=200M --cpu-shares
+```
