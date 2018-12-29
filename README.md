@@ -8,6 +8,8 @@
 * [4-docker-container](4-docker-container.md)
 * [5-dockerfile](5-dockerfile.md)
 * [6-docker-network](6-docker-network.md)
+* [7-docker-volume](7-docker-volume.md)
+* [8-docker-compose](8-docker-compose.md)
 
 #### 参考
 * [docker-practice](https://github.com/yeasy/docker_practice)

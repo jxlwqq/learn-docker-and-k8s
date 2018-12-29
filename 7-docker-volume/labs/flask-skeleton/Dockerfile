@@ -1,5 +1,5 @@
 FROM python:2.7
-LABEL maintainer="Peng Xiao<xiaoquwl@gmail.com>"
+LABEL maintainer="jxlwqq@gmail.com>"
 
 COPY . /skeleton
 WORKDIR /skeleton

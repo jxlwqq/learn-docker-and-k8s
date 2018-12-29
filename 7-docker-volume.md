@@ -4,6 +4,8 @@ https://hub.docker.com/_/mysql
 docker run -d --name mysql1 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:5.7
 docker run -d --name mysql2 -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:5.7
 docker volume ls
+# 批量删除
+docker volume rm $(docker volume ls -q)
 ````
 
 ```bash
