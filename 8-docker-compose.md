@@ -118,3 +118,14 @@ docker-compose up -d
 docker-compose up -d --scale web=3
 
 ```
+
+#### example
+
+```bash
+git pull https://github.com/dockersamples/example-voting-app
+
+cd example-voting-app
+
+docker-compose up -d
+```
+

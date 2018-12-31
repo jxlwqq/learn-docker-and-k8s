@@ -1,47 +1,52 @@
-version: "3"
+version: '2'
 
 services:
+
+  sut:
+    build: ./tests/
+    depends_on:
+      - vote
+      - result
+      - worker
+    networks:
+      - front-tier
+
   vote:
-    build: ./vote
-    command: python app.py
-    volumes:
-     - ./vote:/app
-    ports:
-      - "5000:80"
+    build: ../vote/
+    ports: ["80"]
+    depends_on:
+      - redis
+      - db
     networks:
       - front-tier
       - back-tier
 
   result:
-    build: ./result
-    command: nodemon server.js
-    volumes:
-      - ./result:/app
-    ports:
-      - "5001:80"
-      - "5858:5858"
+    build: .
+    ports: ["80"]
+    depends_on:
+      - redis
+      - db
     networks:
       - front-tier
       - back-tier
 
   worker:
-    build:
-      context: ./worker
+    build: ../worker/
     depends_on:
-      - "redis"
+      - redis
+      - db
     networks:
       - back-tier
 
   redis:
     image: redis:alpine
-    container_name: redis
     ports: ["6379"]
     networks:
       - back-tier
 
   db:
     image: postgres:9.4
-    container_name: db
     volumes:
       - "db-data:/var/lib/postgresql/data"
     networks:

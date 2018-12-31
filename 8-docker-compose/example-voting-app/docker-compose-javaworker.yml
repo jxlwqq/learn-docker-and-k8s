@@ -27,8 +27,7 @@ services:
   worker:
     build:
       context: ./worker
-    depends_on:
-      - "redis"
+      dockerfile: Dockerfile.j
     networks:
       - back-tier
 

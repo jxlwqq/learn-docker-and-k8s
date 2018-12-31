@@ -1,15 +1,10 @@
-FROM java:7
-
-RUN apt-get update -qq && apt-get install -y maven && apt-get clean
+FROM microsoft/dotnet:2.0.0-sdk
 
 WORKDIR /code
 
-ADD pom.xml /code/pom.xml
-RUN ["mvn", "dependency:resolve"]
-RUN ["mvn", "verify"]
+ADD src/Worker /code/src/Worker
 
-# Adding source, compile and package into a fat jar
-ADD src /code/src
-RUN ["mvn", "package"]
+RUN dotnet restore -v minimal src/Worker \
+    && dotnet publish -c Release -o "./" "src/Worker/" 
 
-CMD ["/usr/lib/jvm/java-7-openjdk-amd64/bin/java", "-jar", "target/worker-jar-with-dependencies.jar"]
+CMD dotnet src/Worker/Worker.dll
