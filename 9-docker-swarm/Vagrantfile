@@ -7,19 +7,19 @@ boxes = [
     {
         :name => "swarm-manager",
         :eth1 => "192.168.205.10",
-        :mem => "1024",
+        :mem => "512",
         :cpu => "1"
     },
     {
         :name => "swarm-worker1",
         :eth1 => "192.168.205.11",
-        :mem => "1024",
+        :mem => "512",
         :cpu => "1"
     },
     {
         :name => "swarm-worker2",
         :eth1 => "192.168.205.12",
-        :mem => "1024",
+        :mem => "512",
         :cpu => "1"
     }
 ]
