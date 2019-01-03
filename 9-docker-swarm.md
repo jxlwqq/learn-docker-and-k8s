@@ -1,3 +1,9 @@
+#### 虚拟机性能
+
+本地配置不高的，建议使用 `docker-machine` 创建；或者使用：
+
+[Play with Docker](https://labs.play-with-docker.com/), A simple, interactive and fun playground to learn Docker
+
 #### RAFT 通俗解释
 
 http://thesecretlivesofdata.com/raft/
