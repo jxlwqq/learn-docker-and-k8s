@@ -149,5 +149,11 @@ docker service create --name mysql --env MYSQL_ROOT_PASSWORD=root --env MYSQL_DA
 创建 wordpress service
 ```bash
 docker service create --name wordpress -p 80:80 --env WORDPRESS_DB_PASSWORD=root --env WORDPRESS_DB_HOST=mysql --network demo wordpress
-```
+``` 
 
+#### whoami
+
+```bash
+docker service create --name whoami -p 8000:8000 --network demo -d jwilder/whoami
+docker service create --name client --network demo -d busybox sh -c "while true;do sleep 3600;done"
+```

@@ -34,6 +34,8 @@ docker-machine rm machine-local-demo
 
 # 停止所有 machine
 docker-machine stop $(docker-machine ls -q)
+# 启动所有 machine
+docker-machine start $(docker-machine ls -q)
 ```
 
 #### 云端使用
