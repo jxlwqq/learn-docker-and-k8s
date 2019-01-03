@@ -11,6 +11,7 @@
 * [7-docker-volume](7-docker-volume.md)
 * [8-docker-compose](8-docker-compose.md)
 * [9-docker-swarm](9-docker-swarm.md)
+* [10-kubernetes](10-kubernetes.md)
 
 #### 参考
 * [docker-practice](https://github.com/yeasy/docker_practice)
