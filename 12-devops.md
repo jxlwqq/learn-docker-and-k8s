@@ -60,7 +60,10 @@ docker pull gitlab/gitlab-runner
 运行容器：
 
 ```
-docker run -d -v /srv/gitlab-runner/config:/etc/gitlab-runner --name gitlab-runner gitlab/gitlab-runner register \
+docker run \
+  -d \
+  -v /srv/gitlab-runner/config:/etc/gitlab-runner \
+  --name gitlab-runner gitlab/gitlab-runner register \
   --non-interactive \
   --executor "docker" \
   --docker-image alpine:3 \
