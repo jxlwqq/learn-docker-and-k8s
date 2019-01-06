@@ -22,5 +22,6 @@ mv minikube /usr/local/bin
 
 ```bash
 minikube start
+# Error starting cluster:  kubeadm init error
+# 遇到上述报错
 ```
-
