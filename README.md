@@ -14,6 +14,8 @@
 * [8-docker-compose](8-docker-compose.md)
 * [9-docker-swarm](9-docker-swarm.md)
 * [10-kubernetes](10-kubernetes.md)
+* [11-monitor](11-monitor.md)
+* [12-devops](12-devops.md)
 
 #### 参考
 * [docker-practice](https://github.com/yeasy/docker_practice)
